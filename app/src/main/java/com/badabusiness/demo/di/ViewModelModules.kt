@@ -19,7 +19,7 @@ object ViewModelModules {
 
         single { provideNotePagerRepo(get()) }
         single<NoteRepo> { NoteImpl(get()) }
-        viewModel { MainViewModel(get(),get()) }
+        viewModel { MainViewModel(get()) }
         viewModel { NoteDetailsViewModel(get()) }
 
 

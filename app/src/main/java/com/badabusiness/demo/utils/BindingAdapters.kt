@@ -29,19 +29,21 @@ object BindingAdapters {
     @JvmStatic
     @BindingAdapter("updateMaxLine")
     fun handleMaxLine(view: TextView,note: Note?){
-        view.text = note?.description
+
         if (note ==null ||note.imageUrl.isNullOrEmpty()){
+            view.run {
+                ellipsize = null
+                maxLines = Int.MAX_VALUE
+            }
+
+        }else{
 
             view.run {
                 ellipsize = TextUtils.TruncateAt.END
                 maxLines = 2
             }
-        }else{
-            view.run {
-                ellipsize = null
-                maxLines = Int.MAX_VALUE
-            }
         }
+        view.text = note?.description
     }
 
 

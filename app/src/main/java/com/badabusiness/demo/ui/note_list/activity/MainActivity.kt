@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
 import com.badabusiness.demo.databinding.ActivityMainBinding
 import com.badabusiness.demo.model.Note
@@ -38,7 +39,7 @@ class MainActivity : AppCompatActivity() {
         )
 
         lifecycleScope.launch {
-            viewModel.data.distinctUntilChanged().collectLatest {
+            viewModel.data.collectLatest {
                 adapter.submitData(it)
             }
         }
@@ -52,25 +53,31 @@ class MainActivity : AppCompatActivity() {
             actionOnItemClick()
         }
 
-//       viewModel.addData()
+        adapter.addLoadStateListener { loadState ->
+
+            if (loadState.append.endOfPaginationReached) {
+                handleVisibility(adapter.itemCount < 1)
+            }
+        }
+
     }
 
-    private fun actionOnItemClick(note: Note?=null) {
-        Toast.makeText(baseContext, "Hello", Toast.LENGTH_SHORT).show()
-//        if (note != null) {
-//            viewModel.delete(note)
-//            note.title = "${note.title} Update"
-//            viewModel.update(note)
-//        }
+    private fun actionOnItemClick(note: Note? = null) {
+
         val intent = Intent(applicationContext, NoteDetailsActivity::class.java)
         intent.putExtra(Constants.NOTE_SHARE_KEY, note)
         startForResult.launch(intent)
     }
 
-    val startForResult =
+    private val startForResult =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result: ActivityResult ->
             if (result.resultCode == Activity.RESULT_OK) {
                 adapter.refresh()
             }
         }
+
+    private fun handleVisibility(isEmpty:Boolean){
+        binding.recyclerView.isVisible = !isEmpty
+        binding.txtEmpty.isVisible = isEmpty
+    }
 }

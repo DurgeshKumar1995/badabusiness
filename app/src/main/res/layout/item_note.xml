@@ -9,6 +9,7 @@
             name="note"
             type="com.badabusiness.demo.model.Note" />
         <import type="android.view.View"/>
+        <import type="com.badabusiness.demo.utils.DateUtils"/>
     </data>
 
     <androidx.cardview.widget.CardView
@@ -16,6 +17,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dimen_8dp"
         app:cardElevation="@dimen/dimen_5dp"
+        android:layout_marginHorizontal="@dimen/dimen_8dp"
         app:cardCornerRadius="@dimen/dimen_8dp">
 
 
@@ -74,6 +76,16 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/txt_title" />
 
+            <TextView
+                android:id="@+id/txt_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size_14sp"
+                android:textStyle="italic"
+                android:text="@{DateUtils.getDate(note.createdDate),default = @string/n_a}"
+                android:layout_marginEnd="@dimen/dimen_8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txt_description" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>

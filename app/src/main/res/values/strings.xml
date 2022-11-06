@@ -3,4 +3,12 @@
     <string name="n_a">N/A</string>
     <string name="edited">Edited</string>
     <string name="note">Note</string>
+    <string name="please_enter_title">Please enter title</string>
+    <string name="please_enter_url">Please enter URL</string>
+    <string name="create">Create</string>
+    <string name="please_enter_description">Please enter description</string>
+    <string name="update">Update</string>
+    <string name="delete">Delete</string>
+    <string name="went_wrong">Something went wrong try again!</string>
+    <string name="no_record_found">No record found</string>
 </resources>
