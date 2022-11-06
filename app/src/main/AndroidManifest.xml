@@ -3,14 +3,19 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <application
+        android:name=".NotesApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:name=".NotesApplication"
         android:theme="@style/Theme.BadaBusiness"
         tools:targetApi="31">
+        <activity
+            android:name=".ui.note_curd.view.NoteDetailsActivity"
+            android:exported="false"
+            android:label="@string/note">
+        </activity>
         <activity
             android:name=".ui.note_list.activity.MainActivity"
             android:exported="true">
@@ -19,8 +24,6 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
-
         </activity>
     </application>
 

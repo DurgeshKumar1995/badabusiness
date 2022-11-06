@@ -1,4 +1,4 @@
-package com.badabusiness.demo.di
+package com.badabusiness.demo.db
 
 import androidx.room.TypeConverter
 import java.util.*
