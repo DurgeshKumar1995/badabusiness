@@ -10,7 +10,6 @@ import com.badabusiness.demo.databinding.ActivityNoteDetailsBinding
 import com.badabusiness.demo.model.Note
 import com.badabusiness.demo.ui.note_curd.view_model.NoteDetailsViewModel
 import com.badabusiness.demo.utils.Constants
-import com.google.android.material.textfield.TextInputLayout
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import java.util.*
 

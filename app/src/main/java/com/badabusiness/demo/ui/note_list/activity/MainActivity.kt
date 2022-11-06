@@ -4,7 +4,6 @@ import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.view.isVisible
@@ -17,7 +16,6 @@ import com.badabusiness.demo.ui.note_list.adapter.NoteLoadStateAdapter
 import com.badabusiness.demo.ui.note_list.view_model.MainViewModel
 import com.badabusiness.demo.utils.Constants
 import kotlinx.coroutines.flow.collectLatest
-import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 

@@ -7,7 +7,7 @@ import org.koin.dsl.module
 
 object DBModule {
 
-    const val DATABASE_NAME  = "notes_db"
+    private const val DATABASE_NAME  = "notes_db"
     val notesAppModule = module {
 
         // Room Database

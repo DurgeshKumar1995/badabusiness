@@ -25,7 +25,7 @@ object ViewModelModules {
 
     }
 
-    fun provideNotePagerRepo(daoAPI: NoteDao): NotePagerRepo = NotePagerRepo(daoAPI)
+    private fun provideNotePagerRepo(daoAPI: NoteDao): NotePagerRepo = NotePagerRepo(daoAPI)
 
 
 
