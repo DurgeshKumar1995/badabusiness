@@ -20,12 +20,11 @@ class NoteAdapter(private val clicked: (Note?) -> Unit): PagingDataAdapter<Note,
         }
     }
 
-    inner class NoteViewHolder(val binding: ItemNoteBinding) : RecyclerView.ViewHolder(binding.root){
+    inner class NoteViewHolder(private val binding: ItemNoteBinding) : RecyclerView.ViewHolder(binding.root){
         fun bind(data: Note?) {
-//            binding.model = data
+            binding.note = data
 
             binding.let {
-                it.textView.text = data?.title
                 it.root.setOnClickListener {
                     clicked.invoke(data)
                 }

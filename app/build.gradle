@@ -77,4 +77,7 @@ dependencies {
     //paging
     def paging_version = "3.1.1"
     implementation "androidx.paging:paging-runtime-ktx:$paging_version"
+
+    //coil : image
+    implementation "io.coil-kt:coil:2.2.2"
 }
